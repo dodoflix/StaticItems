@@ -1,0 +1,8 @@
+name: StaticItems
+version: '${project.version}'
+main: me.dodo.staticitems.StaticItems
+api-version: 1.18
+prefix: StaticItems
+authors: [ dodo ]
+description: This plugin allows you to give players static items in their inventory.
+website: https://github.com/dodoflix

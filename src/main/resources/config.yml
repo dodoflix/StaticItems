@@ -1,0 +1,8 @@
+item:
+  material: "COMPASS"
+  slot: 8
+  name: "&aTest"
+  lore:
+    - "&bTest"
+    - "&cTest"
+  command: "menu"
