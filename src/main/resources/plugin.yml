@@ -6,3 +6,6 @@ prefix: StaticItems
 authors: [ dodo ]
 description: This plugin allows you to give players static items in their inventory.
 website: https://github.com/dodoflix
+
+commands:
+  stoggle:

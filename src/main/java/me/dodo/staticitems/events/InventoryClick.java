@@ -16,7 +16,8 @@ public class InventoryClick implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         ItemStack clickItem = event.getCurrentItem();
-        assert clickItem != null;
+        if(clickItem == null)
+            return;
         if(instance.filterItem(clickItem, event.getSlot()) || event.getHotbarButton() == instance.getItems().get(0).getSlot())
             event.setCancelled(true);
     }

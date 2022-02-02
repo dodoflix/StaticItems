@@ -1,9 +1,11 @@
 package me.dodo.staticitems;
 
 import me.dodo.staticitems.cache.Item;
+import me.dodo.staticitems.commands.SToggle;
 import me.dodo.staticitems.events.*;
 import me.dodo.staticitems.settings.ConfigManager;
 import org.bukkit.Material;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,6 +33,9 @@ public final class StaticItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerInteractEntity(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
         getServer().getPluginManager().registerEvents(new PlayerRespawn(), this);
+        getServer().getPluginManager().registerEvents(new PlayerCommandPreprocess(), this);
+
+        this.getCommand("stoggle").setExecutor(new SToggle());
     }
 
     public static StaticItems getInstance() {
