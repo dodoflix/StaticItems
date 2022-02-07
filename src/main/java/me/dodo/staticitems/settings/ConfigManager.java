@@ -41,6 +41,11 @@ public class ConfigManager {
                 }
 
                 @Override
+                public int customModelData() {
+                    return Objects.requireNonNull(yamlConfiguration.getConfigurationSection("item")).getInt("customModelData");
+                }
+
+                @Override
                 public int slot() {
                     return Objects.requireNonNull(yamlConfiguration.getConfigurationSection("item")).getInt("slot");
                 }

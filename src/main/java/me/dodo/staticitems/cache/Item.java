@@ -6,13 +6,15 @@ import java.util.List;
 
 public class Item {
     Material material;
+    int customModelData;
     int slot;
     String name;
     List<String> lore;
     String command;
 
-    public Item(Material material, int slot, String name, List<String> lore, String command) {
+    public Item(Material material, int customModelData, int slot, String name, List<String> lore, String command) {
         this.material = material;
+        this.customModelData = customModelData;
         this.slot = slot;
         this.name = name;
         this.lore = lore;
@@ -21,6 +23,10 @@ public class Item {
 
     public Material getMaterial() {
         return material;
+    }
+
+    public int getCustomModelData() {
+        return customModelData;
     }
 
     public int getSlot() {
@@ -41,6 +47,10 @@ public class Item {
 
     public void setMaterial(Material _material) {
         this.material = _material;
+    }
+
+    public void setCustomModelData(int customModelData) {
+        this.customModelData = customModelData;
     }
 
     public void setSlot(int _slot) {

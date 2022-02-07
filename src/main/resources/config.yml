@@ -1,5 +1,6 @@
 item:
   material: "COMPASS"
+  customModelData: 0
   slot: 8
   name: "&aTest"
   lore:

@@ -16,7 +16,8 @@ public class PlayerCommandPreprocess implements Listener {
 
     @EventHandler
     public void onPlayerCommandPreProcess(PlayerCommandPreprocessEvent event) {
-        if(instance.filterItem(event.getPlayer().getInventory().getItemInMainHand(), event.getPlayer().getInventory().getHeldItemSlot())) {
+        String command = event.getMessage().split(" ")[0].replaceAll("/", "");
+        if(!instance.getItems().get(0).getCommand().equals(command) && instance.filterItem(event.getPlayer().getInventory().getItemInMainHand(), event.getPlayer().getInventory().getHeldItemSlot())) {
             event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&aKomut girmeden önce lütfen elinize başka bir eşya alın."));
             event.setCancelled(true);
         }

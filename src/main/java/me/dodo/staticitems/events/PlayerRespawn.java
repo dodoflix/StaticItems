@@ -38,6 +38,7 @@ public class PlayerRespawn implements Listener {
             assert itemMeta != null;
             itemMeta.setDisplayName(items.get(0).getName());
             itemMeta.setLore(items.get(0).getLore());
+            itemMeta.setCustomModelData(items.get(0).getCustomModelData());
             item.setItemMeta(itemMeta);
             player.getInventory().setItem(items.get(0).getSlot(), item);
         }

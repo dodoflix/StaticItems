@@ -5,7 +5,6 @@ import me.dodo.staticitems.commands.SToggle;
 import me.dodo.staticitems.events.*;
 import me.dodo.staticitems.settings.ConfigManager;
 import org.bukkit.Material;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,7 +21,7 @@ public final class StaticItems extends JavaPlugin {
 
         ConfigManager configManager = new ConfigManager(this);
         configManager.loadConfig();
-        Item item = new Item(configManager.getItemsConf().material(), configManager.getItemsConf().slot(), configManager.getItemsConf().name(), configManager.getItemsConf().lore(), configManager.getItemsConf().command());
+        Item item = new Item(configManager.getItemsConf().material(), configManager.getItemsConf().customModelData(),configManager.getItemsConf().slot(), configManager.getItemsConf().name(), configManager.getItemsConf().lore(), configManager.getItemsConf().command());
         Items.add(item);
 
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);

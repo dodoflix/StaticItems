@@ -6,14 +6,13 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.List;
-import java.util.Objects;
+
 
 public class SToggle implements CommandExecutor {
     StaticItems instance;
@@ -33,6 +32,9 @@ public class SToggle implements CommandExecutor {
         else {
             List<Item> items = instance.getItems();
             ItemStack item = new ItemStack(items.get(0).getMaterial());
+            ItemStack dropItem = player.getInventory().getItem(items.get(0).getSlot());
+            if(dropItem != null)
+                player.getWorld().dropItemNaturally(player.getLocation(), dropItem);
             if(item.getType() == Material.PLAYER_HEAD){
                 SkullMeta skullMeta = (SkullMeta) item.getItemMeta();
                 assert skullMeta != null;
