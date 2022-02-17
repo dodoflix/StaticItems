@@ -7,3 +7,5 @@ item:
     - "&bTest"
     - "&cTest"
   command: "menu"
+  commandBlackList:
+    - "ah"

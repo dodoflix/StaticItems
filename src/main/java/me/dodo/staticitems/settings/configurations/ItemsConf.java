@@ -11,4 +11,5 @@ public interface ItemsConf {
     String name();
     List<String> lore();
     String command();
+    List<String> commandBlackList();
 }

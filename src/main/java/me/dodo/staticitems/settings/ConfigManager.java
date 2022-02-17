@@ -75,6 +75,11 @@ public class ConfigManager {
                     return Objects.requireNonNull(yamlConfiguration.getConfigurationSection("item")).getString("command");
                 }
 
+                @Override
+                public List<String> commandBlackList() {
+                    return Objects.requireNonNull(yamlConfiguration.getConfigurationSection("item")).getStringList("commandBlackList");
+                }
+
             };
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();

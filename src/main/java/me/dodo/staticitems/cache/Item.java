@@ -11,14 +11,16 @@ public class Item {
     String name;
     List<String> lore;
     String command;
+    List<String> commandBlackList;
 
-    public Item(Material material, int customModelData, int slot, String name, List<String> lore, String command) {
+    public Item(Material material, int customModelData, int slot, String name, List<String> lore, String command, List<String> commandBlackList) {
         this.material = material;
         this.customModelData = customModelData;
         this.slot = slot;
         this.name = name;
         this.lore = lore;
         this.command = command;
+        this.commandBlackList = commandBlackList;
     }
 
     public Material getMaterial() {
@@ -45,6 +47,10 @@ public class Item {
         return command;
     }
 
+    public List<String> getCommandBlackList() {
+        return commandBlackList;
+    }
+
     public void setMaterial(Material _material) {
         this.material = _material;
     }
@@ -67,5 +73,9 @@ public class Item {
 
     public void setCommand(String _command) {
         this.command = _command;
+    }
+
+    public void setCommandBlackList(List<String> commandBlackList) {
+        this.commandBlackList = commandBlackList;
     }
 }

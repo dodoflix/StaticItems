@@ -21,7 +21,7 @@ public final class StaticItems extends JavaPlugin {
 
         ConfigManager configManager = new ConfigManager(this);
         configManager.loadConfig();
-        Item item = new Item(configManager.getItemsConf().material(), configManager.getItemsConf().customModelData(),configManager.getItemsConf().slot(), configManager.getItemsConf().name(), configManager.getItemsConf().lore(), configManager.getItemsConf().command());
+        Item item = new Item(configManager.getItemsConf().material(), configManager.getItemsConf().customModelData(),configManager.getItemsConf().slot(), configManager.getItemsConf().name(), configManager.getItemsConf().lore(), configManager.getItemsConf().command(), configManager.getItemsConf().commandBlackList());
         Items.add(item);
 
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
